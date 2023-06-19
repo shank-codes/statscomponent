@@ -1,38 +1,121 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: hsl(233, 47%, 7%);
+  font-family: "Lucida Sans", "Lucida Sans Regular";
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+#root {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+  width: 1200px;
+  height: 420px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 0.5em;
+  background-color: hsl(244, 38%, 16%);
+  justify-content: space-around;
+  align-items: stretch;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.headerImage {
+  width: 50%;
+  background: linear-gradient(
+      0deg,
+      hsla(277, 64%, 61%, 0.5) 0%,
+      hsla(277, 64%, 61%, 0.5) 100%
+    ),
+    url(/public/images/image-header-desktop.jpg) no-repeat;
+  background-size: cover;
+  border-radius: 0 0.5em 0.5em 0;
+}
+
+.content {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  padding: 3em 5em 2em 4em;
+}
+.title {
+  color: #ffffff;
+  font-family: Inter;
+  font-weight: 700;
+  font-size: xx-large;
+}
+
+.title > span {
+  color: hsl(277, 64%, 61%);
+}
+
+.description {
+  font-family: Inter;
+  color: hsla(0, 0%, 100%, 0.75);
+  font-size: medium;
+  line-height: 1.5em;
+}
+
+.stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.numeric {
+  color: #ffffff;
+  font-family: Inter;
+  font-weight: 700;
+  font-size: x-large;
+  margin-bottom: unset;
+}
+
+.statHeading {
+  color: hsla(0, 0%, 100%, 0.6);
+  font-size: smaller;
+  font-family: Lexend Deca;
+  margin-top: 0.5em;
+}
+
+.mobileHeaderImage {
+  display: none;
+}
+
+@media (max-width: 450px) {
+  .card {
+    margin: 5em 0 5em 0;
+    width: 90%;
+    height: max-content;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .content {
+    width: 100%;
+    padding: 0 1.5em 1em 1.5em;
+    text-align: center;
+  }
+  .headerImage {
+    display: none;
+  }
+  .mobileHeaderImage {
+    display: block;
+    width: 100%;
+    height: 20em;
+    background: linear-gradient(
+        0deg,
+        hsla(277, 64%, 61%, 0.5) 0%,
+        hsla(277, 64%, 61%, 0.5) 100%
+      ),
+      url(/public/images/image-header-mobile.jpg) no-repeat;
+    background-size: cover;
+    border-radius: 0.5em 0.5em 0 0;
+  }
+
+  .stats {
+    flex-direction: column;
   }
 }
